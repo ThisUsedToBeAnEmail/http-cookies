@@ -14,7 +14,7 @@ require HTTP::Cookies::Netscape;
 $EPOCH_OFFSET = 0;  # difference from Unix epoch
 if ($^O eq "MacOS") {
     require Time::Local;
-    $EPOCH_OFFSET = Time::Local::timelocal(0,0,0,1,0,70);
+    $EPOCH_OFFSET = Time::Local::timegm(0,0,0,1,0,1970);
 }
 
 # A HTTP::Cookies object is a hash.  The main attribute is the
